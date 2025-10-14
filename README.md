@@ -175,6 +175,21 @@ X
 
 <img width="754" height="245" alt="image" src="https://github.com/user-attachments/assets/4158dbf0-803e-4aa6-84f5-2a9e6458cdfb" />
 
+data["Sex"] = data["Sex"].astype("category")
+data["Cabin"] = data["Cabin"].astype("category")
+data["Embarked"] = data["Embarked"].astype("category")
+
+data
+
+<img width="661" height="256" alt="image" src="https://github.com/user-attachments/assets/8d06274b-fd86-4bee-83af-1d98cb731937" />
+
+
+x.info()
+
+
+<img width="393" height="211" alt="image" src="https://github.com/user-attachments/assets/285ece97-e833-455c-914d-dc04fef2c15d" />
+
+
 
 
 
