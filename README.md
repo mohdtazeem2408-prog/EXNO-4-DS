@@ -24,6 +24,161 @@ The feature selection techniques used are:
 3.Embedded Method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+
+
+import pandas as pd 
+
+from scipy import stats 
+
+import numpy as np 
+
+df = pd.read_csv("bmi.csv")
+
+df.head()
+
+<img width="304" height="122" alt="image" src="https://github.com/user-attachments/assets/97f3af47-13a2-4fa1-ad42-5380f3086ad0" />
+
+
+max_values = np.max(np.abs(df[['Height','Weight']]))
+max_values
+
+
+<img width="120" height="34" alt="image" src="https://github.com/user-attachments/assets/f4e207e0-795f-429a-9204-0b41be49088a" />
+
+
+
+from sklearn.preprocessing import StandardScaler
+
+sc= StandardScaler()
+
+df[['Height','Weight']] = sc.fit_transform(df[['Height','Weight']])
+
+df.head(10)
+
+<img width="354" height="227" alt="image" src="https://github.com/user-attachments/assets/e82ba202-27e9-44aa-a917-23e8a34d52d2" />
+
+
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+
+df[["Height",'Weight']] = scaler.fit_transform(df[['Height','Weight']])
+
+df.head(10)
+
+<img width="351" height="231" alt="image" src="https://github.com/user-attachments/assets/b8a782f4-4fbe-49a8-9c74-b41a386d272c" />
+
+
+
+from sklearn.preprocessing import Normalizer
+
+scaler = Normalizer()
+
+df[["Height",'Weight']] = scaler.fit_transform(df[['Height','Weight']])
+
+df.head(10)
+
+<img width="348" height="231" alt="image" src="https://github.com/user-attachments/assets/d7ed79ce-948b-41bd-a941-fcb501089329" />
+
+
+from sklearn.preprocessing import MaxAbsScaler
+
+scaler = MaxAbsScaler()
+
+df[['Height','Weight']] = scaler.fit_transform(df[['Height','Weight']])
+
+df.head()
+
+<img width="345" height="132" alt="image" src="https://github.com/user-attachments/assets/08963ba9-3856-47ac-aeb8-e5d6ac087406" />
+
+
+
+from sklearn.preprocessing import RobustScaler
+
+scaler = RobustScaler()
+
+df[['Height','Weight']] = scaler.fit_transform(df[['Height','Weight']])
+
+df.head()
+
+<img width="347" height="131" alt="image" src="https://github.com/user-attachments/assets/0c1bc584-4ad4-46b7-a04a-2aac2f52998a" />
+
+
+df = pd.read_csv("titanic_dataset.csv")
+
+df.columns
+
+<img width="692" height="65" alt="image" src="https://github.com/user-attachments/assets/7ab3ed10-898a-4159-8286-a5836a0616f1" />
+
+
+
+
+df = df.drop(["Name","Sex","Ticket","Cabin","Embarked"],axis=1)
+
+df.columns
+
+<img width="762" height="48" alt="image" src="https://github.com/user-attachments/assets/169edc21-d547-4f1b-a72f-80a0cbccbeab" />
+
+
+df["Age"].isnull().sum()
+
+<img width="199" height="30" alt="image" src="https://github.com/user-attachments/assets/54f2d674-40fe-4454-afd4-fa8d699d785e" />
+
+
+
+df["Age"].fillna(method="ffill")
+
+<img width="351" height="246" alt="image" src="https://github.com/user-attachments/assets/b7b36b5e-6611-4a0e-a8aa-06b27818a742" />
+
+
+cols = df.columns.tolist()
+
+cols[-1], cols[1] = cols[1],cols[-1]
+
+df= df[cols]
+
+df.columns
+
+<img width="780" height="55" alt="image" src="https://github.com/user-attachments/assets/c4034265-94a6-486a-9d75-7973d3dfb4a0" />
+
+
+
+x = df.iloc[:,0:6]
+y = df.iloc[:,6]
+
+x.columns
+
+<img width="690" height="46" alt="image" src="https://github.com/user-attachments/assets/9aaa5db1-3b2e-437d-87fc-af44831c91d2" />
+
+
+
+y = y.to_frame()
+
+
+y.columns
+
+<img width="410" height="35" alt="image" src="https://github.com/user-attachments/assets/920fa8d8-d1c8-4698-86dc-8333f8163b7a" />
+
+import pandas as pd 
+from sklearn.feature_selection import chi2
+
+data = pd.read_csv("titanic_dataset.csv")
+
+
+data =data.dropna()
+
+X = data.drop(['Survived','Name','Ticket'],axis=1)
+
+y = data["Survived"]
+
+X
+
+<img width="754" height="245" alt="image" src="https://github.com/user-attachments/assets/4158dbf0-803e-4aa6-84f5-2a9e6458cdfb" />
+
+
+
+
+
+# INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
 # RESULT:
        # INCLUDE YOUR RESULT HERE
