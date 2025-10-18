@@ -191,9 +191,5 @@ x.info()
 
 
 
-
-
-
-# INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
 # RESULT:
-       # INCLUDE YOUR RESULT HERE
+       Thus, the program to implement Feature Scaling and Feature Selection was completed successfully.
